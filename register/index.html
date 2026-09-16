@@ -5,13 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#03050b">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="PACE International Model United Nations">
-<title>PACE International MUN</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+<title>PaceMUN II — Chair Applications</title>
 <style>
 :root{
   --bg:#03050b;
@@ -32,4349 +29,564 @@
   --max:1240px;
   --ease:cubic-bezier(.2,.75,.2,1);
 }
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;
-  min-height:100vh;
-  color:var(--text);
+  margin:0;min-height:100vh;color:var(--text);
   background:
     radial-gradient(circle at 12% -4%,rgba(230,165,44,.09),transparent 28%),
     radial-gradient(circle at 95% 5%,rgba(95,108,255,.06),transparent 22%),
     linear-gradient(180deg,#020409 0%,#03050b 52%,#020409 100%);
   font-family:"DM Sans",system-ui,sans-serif;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  line-height:1.6;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6;
 }
-
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  pointer-events:none;
-  opacity:.035;
-  mix-blend-mode:soft-light;
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+  opacity:.035;mix-blend-mode:soft-light;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-
-*::selection{
-  background:rgba(230,165,44,.28);
-  color:#fff;
+::selection{background:rgba(230,165,44,.28);color:#fff}
+.container{width:min(940px,calc(100% - 34px));margin:0 auto}
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:5000;height:70px;
+  display:flex;align-items:center;background:rgba(3,5,11,.76);
+  backdrop-filter:blur(18px) saturate(130%);border-bottom:1px solid var(--line);
 }
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-.container{
-  width:min(var(--max),calc(100% - 48px));
-  margin-inline:auto;
-}
-
-.hidden{
-  display:none!important;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--gold2);
-  font-size:.66rem;
-  line-height:1;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-}
-
-.eyebrow::before{
-  content:"";
-  width:24px;
-  height:1px;
-  background:var(--gold);
-  box-shadow:0 0 15px rgba(230,165,44,.6);
-}
-
-h1,
-h2,
-h3,
-h4{
-  margin:0;
-  color:#fff;
-  font-family:"Manrope",sans-serif;
-  letter-spacing:-.045em;
-}
-
-p{
-  margin:0;
-}
-
-.btn{
-  min-height:48px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  padding:0 20px;
-  border-radius:12px;
-  border:1px solid var(--line2);
-  background:rgba(255,255,255,.025);
-  color:#fff;
-  transition:
-    transform .25s var(--ease),
-    border-color .25s ease,
-    background .25s ease,
-    box-shadow .25s ease;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,.055);
-  border-color:rgba(255,255,255,.23);
-}
-
-.btn:focus-visible,
-button:focus-visible,
-input:focus-visible,
-a:focus-visible{
-  outline:2px solid var(--gold2);
-  outline-offset:3px;
-}
-
-.btn-primary{
-  color:#111;
-  border-color:transparent;
-  font-weight:800;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  box-shadow:0 13px 42px rgba(230,165,44,.14);
-}
-
-.btn-primary:hover{
-  border-color:transparent;
-  background:linear-gradient(135deg,#ffd76a,var(--gold2));
-  box-shadow:0 18px 54px rgba(230,165,44,.22);
-}
-
-.btn-sm{
-  min-height:40px;
-  padding:0 14px;
-  border-radius:10px;
-  font-size:.79rem;
-}
-
-.icon{
-  width:17px;
-  height:17px;
-}
-
-.icon svg{
-  width:100%;
-  height:100%;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:opacity .7s var(--ease),transform .7s var(--ease);
-}
-
-.reveal.in{
-  opacity:1;
-  transform:none;
-}
-
-/* NAV */
-
-.site-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:5000;
-  height:78px;
-  border-bottom:1px solid transparent;
-  transition:background .3s ease,border-color .3s ease,box-shadow .3s ease;
-}
-
-.site-nav.scrolled{
-  background:rgba(3,5,11,.76);
-  backdrop-filter:blur(18px) saturate(130%);
-  border-bottom-color:var(--line);
-  box-shadow:0 20px 60px rgba(0,0,0,.22);
-}
-
-.nav-inner{
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:.78rem;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
+.topbar-inner{width:min(1240px,calc(100% - 48px));margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-decoration:none;white-space:nowrap}
 .brand-mark{
-  position:relative;
-  width:38px;
-  height:38px;
-  flex:0 0 auto;
-  border:1px solid rgba(230,165,44,.46);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(circle,rgba(230,165,44,.11),transparent 58%),
-    #090c13;
-  box-shadow:inset 0 0 20px rgba(230,165,44,.07);
+  position:relative;width:34px;height:34px;flex:0 0 auto;border:1px solid rgba(230,165,44,.46);
+  border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,rgba(230,165,44,.11),transparent 58%),#090c13;
 }
-
-.brand-mark::before,
-.brand-mark::after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  border:1px solid rgba(230,165,44,.26);
+.brand-mark span{position:relative;z-index:1;font-family:"Playfair Display",serif;font-size:11px;color:var(--gold2)}
+.topbar-back{
+  display:inline-flex;align-items:center;gap:7px;color:#aeb5c3;font-size:.78rem;font-weight:700;
+  text-decoration:none;padding:0 14px;min-height:42px;border-radius:10px;transition:.2s;
 }
-
-.brand-mark::before{
-  inset:5px;
-}
-
-.brand-mark::after{
-  inset:9px;
-}
-
-.brand-mark span{
-  position:relative;
-  z-index:1;
-  font-family:"Playfair Display",serif;
-  font-size:11px;
-  color:var(--gold2);
-}
-
-.nav-menu{
-  display:flex;
-  align-items:center;
-  gap:3px;
-}
-
-.nav-link{
-  position:relative;
-  min-height:42px;
-  padding:0 14px;
-  display:flex;
-  align-items:center;
-  color:#aeb5c3;
-  font-size:.78rem;
-  font-weight:700;
-  border-radius:10px;
-  transition:color .2s ease,background .2s ease;
-}
-
-.nav-link:hover{
-  color:#fff;
-  background:rgba(255,255,255,.03);
-}
-
-.nav-link::after{
-  content:"";
-  position:absolute;
-  left:14px;
-  right:14px;
-  bottom:1px;
-  height:1px;
-  transform:scaleX(0);
-  background:var(--gold);
-  box-shadow:0 0 12px rgba(230,165,44,.65);
-  transition:transform .22s ease;
-}
-
-.nav-link:hover::after{
-  transform:scaleX(1);
-}
-
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-left:5px;
-}
-
-.mobile-toggle{
-  width:44px;
-  height:44px;
-  display:none;
-  place-items:center;
-  border:1px solid var(--line2);
-  border-radius:12px;
-  color:#fff;
-  background:rgba(255,255,255,.025);
-}
-
-.mobile-toggle svg{
-  width:20px;
-  height:20px;
-}
-
-/* HERO */
-
+.topbar-back:hover{color:#fff;background:rgba(255,255,255,.03)}
 .hero{
-  position:relative;
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  padding:150px 0 100px;
-  overflow:hidden;
+  position:relative;min-height:40vh;display:flex;align-items:center;
+  padding:135px 0 55px;overflow:hidden;
 }
-
-.hero-grid{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
   background-image:
     linear-gradient(rgba(255,255,255,.024) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.024) 1px,transparent 1px);
   background-size:48px 48px;
-  mask-image:linear-gradient(to bottom,black,transparent 82%);
+  mask-image:linear-gradient(to bottom,black,transparent 90%);
 }
-
-.hero-glow{
-  position:absolute;
-  width:700px;
-  height:700px;
-  right:-220px;
-  top:-220px;
+.hero::after{
+  content:"";position:absolute;width:620px;height:620px;right:-250px;top:-300px;
   border-radius:50%;
   background:radial-gradient(circle,rgba(230,165,44,.11),transparent 70%);
-  filter:blur(25px);
-}
-
-.hero-glow-2{
-  position:absolute;
-  width:500px;
-  height:500px;
-  left:-230px;
-  bottom:-250px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(89,105,255,.05),transparent 70%);
-  filter:blur(25px);
-}
-
-.hero-layout{
-  position:relative;
-  display:grid;
-  grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr);
-  gap:70px;
-  align-items:center;
-}
-
-.hero-title{
-  margin-top:25px;
-  max-width:8ch;
-  font-size:clamp(4.2rem,8.5vw,8.7rem);
-  line-height:.86;
-  font-weight:800;
-}
-
-.hero-title span{
-  display:block;
-}
-
-.hero-title .outline{
-  color:transparent;
-  -webkit-text-stroke:1px rgba(255,255,255,.42);
-}
-
-.hero-lede{
-  max-width:57ch;
-  margin-top:29px;
-  color:#a1a9b8;
-  font-size:1rem;
-  line-height:1.9;
-}
-
-.hero-actions{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:34px;
-}
-
-.hero-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-top:31px;
-  color:#626b7a;
-  font-size:.68rem;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
-
-.hero-meta strong{
-  color:#dce0e7;
-}
-
-.hero-orb{
-  position:relative;
-  min-height:610px;
-  display:grid;
-  place-items:center;
-}
-
-.orb-rings{
-  position:absolute;
-  width:min(585px,90vw);
-  aspect-ratio:1;
-  border-radius:50%;
-  border:1px solid rgba(230,165,44,.13);
-  transform:rotate(-12deg);
-}
-
-.orb-rings::before,
-.orb-rings::after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  border:1px solid rgba(230,165,44,.08);
-}
-
-.orb-rings::before{
-  inset:8%;
-}
-
-.orb-rings::after{
-  inset:19%;
-  border-style:dashed;
-  border-color:rgba(230,165,44,.13);
-  animation:spin 28s linear infinite;
-}
-
-.orb-core{
-  position:relative;
-  width:min(400px,67vw);
-  aspect-ratio:1;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(circle at 50% 34%,rgba(255,204,83,.10),transparent 33%),
-    radial-gradient(circle,#121826 0%,#080c13 58%,#04060a 100%);
-  border:1px solid rgba(230,165,44,.28);
-  box-shadow:
-    inset 0 0 80px rgba(230,165,44,.05),
-    0 0 110px rgba(230,165,44,.035),
-    0 40px 110px rgba(0,0,0,.35);
-}
-
-.orb-core::before{
-  content:"";
-  position:absolute;
-  inset:18px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.055);
-}
-
-.orb-core::after{
-  content:"";
-  position:absolute;
-  inset:35px;
-  border-radius:50%;
-  border:1px solid rgba(230,165,44,.10);
-}
-
-.seal{
-  position:relative;
-  z-index:2;
-  width:66%;
-  aspect-ratio:1;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:radial-gradient(circle,rgba(230,165,44,.08),rgba(3,5,11,.92) 64%);
-  border:1px solid rgba(230,165,44,.5);
-}
-
-.seal-inner{
-  width:73%;
-  aspect-ratio:1;
-  border:1px solid rgba(230,165,44,.24);
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  gap:4px;
-}
-
-.seal-small{
-  color:#b38941;
-  font-size:.52rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.seal-title{
-  color:var(--gold2);
-  font-family:"Playfair Display",serif;
-  font-size:1.45rem;
-  letter-spacing:.08em;
-}
-
-.seal-year{
-  color:#6c7484;
-  font-size:.54rem;
-  letter-spacing:.18em;
-}
-
-.hero-card{
-  position:absolute;
-  left:0;
-  bottom:18px;
-  width:250px;
-  padding:18px;
-  border-radius:17px;
-  border:1px solid var(--line);
-  background:rgba(8,11,18,.84);
-  backdrop-filter:blur(15px);
-  box-shadow:0 28px 80px rgba(0,0,0,.35);
-}
-
-.hero-card .tiny{
-  color:#616a79;
-  font-size:.58rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-}
-
-.hero-card strong{
-  display:block;
-  margin-top:8px;
-  color:#fff;
-  font-size:1.07rem;
-  line-height:1.35;
-}
-
-.hero-card .divider{
-  height:1px;
-  margin:14px 0;
-  background:var(--line);
-}
-
-.hero-card-row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  color:#737c8b;
-  font-size:.69rem;
-}
-
-.hero-card-row b{
-  color:#e2e5ea;
-}
-
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-/* TICKER */
-
-.ticker{
-  overflow:hidden;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,.015);
-}
-
-.ticker-track{
-  width:max-content;
-  display:flex;
-  animation:ticker 30s linear infinite;
-}
-
-.ticker-item{
-  min-height:62px;
-  padding:0 27px;
-  display:flex;
-  align-items:center;
-  gap:24px;
-  color:#9198a6;
-  font-size:.66rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-.ticker-item span{
-  color:var(--gold2);
-  font-size:.95rem;
-}
-
-@keyframes ticker{
-  to{transform:translateX(-50%)}
-}
-
-/* SECTIONS */
-
-.section{
-  position:relative;
-  padding:118px 0;
-}
-
-.section-head{
-  display:grid;
-  grid-template-columns:minmax(250px,.75fr) minmax(320px,1fr);
-  gap:60px;
-  align-items:end;
-  margin-bottom:56px;
-}
-
-.section-head h2{
-  margin-top:16px;
-  max-width:10ch;
-  font-size:clamp(2.5rem,5vw,4.8rem);
-  line-height:.95;
-}
-
-.section-head p{
-  max-width:58ch;
-  color:var(--muted);
-  font-size:.95rem;
-  line-height:1.9;
-}
-
-/* STATS */
-
-.stats{
-  padding-top:35px;
-  padding-bottom:35px;
-}
-
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.018);
-}
-
-.stat{
-  position:relative;
-  min-height:145px;
-  padding:28px;
-  border-right:1px solid var(--line);
-}
-
-.stat:last-child{
-  border-right:0;
-}
-
-.stat-number{
-  color:#fff;
-  font-size:2.65rem;
-  font-weight:800;
-  letter-spacing:-.07em;
-}
-
-.stat-label{
-  margin-top:5px;
-  color:#626a79;
-  font-size:.66rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.stat::after{
-  content:"";
-  position:absolute;
-  left:28px;
-  bottom:20px;
-  width:28px;
-  height:1px;
-  background:var(--gold);
-  box-shadow:0 0 13px rgba(230,165,44,.55);
-}
-
-/* ABOUT */
-
-.about-layout{
-  display:grid;
-  grid-template-columns:minmax(280px,.72fr) minmax(320px,1fr);
-  gap:82px;
-}
-
-.about-title{
-  max-width:10ch;
-  color:#fff;
-  font-size:clamp(2.7rem,5vw,5rem);
-  line-height:.97;
-}
-
-.about-title em{
-  color:var(--gold2);
-  font-family:"Playfair Display",serif;
-  font-style:normal;
-}
-
-.about-body{
-  display:grid;
-  gap:22px;
-}
-
-.about-body p{
-  max-width:64ch;
-  color:#9199a9;
-  font-size:.91rem;
-  line-height:1.95;
-}
-
-.about-callout{
-  margin-top:5px;
-  padding:22px 23px;
-  border-left:2px solid var(--gold);
-  background:linear-gradient(90deg,rgba(230,165,44,.06),transparent);
-  color:#c9ced7;
-  font-size:.82rem;
-  line-height:1.8;
-}
-
-.about-panels{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:11px;
-}
-
-.mini-panel{
-  padding:20px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:rgba(255,255,255,.017);
-}
-
-.mini-panel-number{
-  color:var(--gold2);
-  font-size:.62rem;
-  letter-spacing:.16em;
-  font-weight:800;
-}
-
-.mini-panel h4{
-  margin-top:11px;
-  font-size:.95rem;
-}
-
-.mini-panel p{
-  margin-top:8px;
-  color:#697281;
-  font-size:.71rem;
-  line-height:1.72;
-}
-
-/* COMMITTEES */
-
-.committees{
-  background:
-    radial-gradient(circle at 83% 19%,rgba(230,165,44,.045),transparent 25%),
-    linear-gradient(180deg,transparent,rgba(255,255,255,.01));
-}
-
-.committee-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.committee{
-  position:relative;
-  min-height:318px;
-  padding:27px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:19px;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008)),
-    rgba(9,13,21,.82);
-  transition:
-    transform .35s var(--ease),
-    border-color .35s ease,
-    background .35s ease;
-}
-
-.committee:hover{
-  transform:translateY(-7px);
-  border-color:rgba(230,165,44,.28);
-  background:
-    linear-gradient(180deg,rgba(230,165,44,.05),rgba(255,255,255,.008)),
-    rgba(9,13,21,.9);
-}
-
-.committee::before{
-  content:"";
-  position:absolute;
-  width:160px;
-  height:160px;
-  top:-75px;
-  right:-70px;
-  border:1px solid rgba(230,165,44,.1);
-  border-radius:50%;
-}
-
-.committee-code{
-  color:var(--gold2);
-  font-size:.61rem;
-  letter-spacing:.17em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.committee-number{
-  position:absolute;
-  top:24px;
-  right:25px;
-  color:rgba(255,255,255,.07);
-  font-size:.7rem;
-  font-weight:800;
-  letter-spacing:.1em;
-}
-
-.committee h3{
-  margin-top:52px;
-  max-width:10ch;
-  color:#fff;
-  font-size:1.55rem;
-  line-height:1.04;
-}
-
-.committee-topic{
-  max-width:35ch;
-  margin-top:16px;
-  color:#7f8796;
-  font-size:.79rem;
-  line-height:1.78;
-}
-
-.committee-footer{
-  position:absolute;
-  left:27px;
-  right:27px;
-  bottom:24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.pill{
-  display:inline-flex;
-  align-items:center;
-  min-height:25px;
-  padding:0 9px;
-  border-radius:999px;
-  border:1px solid rgba(230,165,44,.18);
-  background:rgba(230,165,44,.055);
-  color:#c89e50;
-  font-size:.58rem;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-  font-weight:700;
-}
-
-.pill-muted{
-  border-color:var(--line);
-  background:rgba(255,255,255,.025);
-  color:#696f7c;
-}
-
-/* MEMBERS */
-
-.member-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.member{
-  padding:13px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:rgba(255,255,255,.017);
-  transition:transform .32s var(--ease),border-color .32s ease;
-}
-
-.member:hover{
-  transform:translateY(-5px);
-  border-color:var(--line2);
-}
-
-.member-photo{
-  position:relative;
-  aspect-ratio:1;
-  overflow:hidden;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.055);
-  background:
-    radial-gradient(circle at 50% 38%,rgba(230,165,44,.11),transparent 38%),
-    #090d15;
-}
-
-.member-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.member-fallback{
-  width:100%;
-  height:100%;
-  display:grid;
-  place-items:center;
-  color:#e9bb51;
-  font-family:"Playfair Display",serif;
-  font-size:1.9rem;
-  background:
-    radial-gradient(circle at 50% 40%,rgba(230,165,44,.14),transparent 35%),
-    linear-gradient(145deg,#121827,#080b12);
-}
-
-.member-body{
-  padding:15px 3px 5px;
-}
-
-.member-name{
-  color:#edf0f4;
-  font-size:.94rem;
-  font-weight:800;
-}
-
-.member-role{
-  margin-top:4px;
-  color:var(--gold2);
-  font-size:.59rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.member-committee{
-  margin-top:7px;
-  color:#626b7a;
-  font-size:.69rem;
-}
-
-.members-state{
-  min-height:220px;
-  display:grid;
-  place-items:center;
-  color:#6e7685;
-  font-size:.8rem;
-  border:1px dashed rgba(255,255,255,.1);
-  border-radius:18px;
-}
-
-.loader{
-  width:16px;
-  height:16px;
-  display:inline-block;
-  margin-right:9px;
-  border-radius:50%;
-  border:2px solid rgba(255,255,255,.12);
-  border-top-color:var(--gold2);
-  animation:spin .8s linear infinite;
-  vertical-align:middle;
-}
-
-/* EXPERIENCE */
-
-.experience-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.experience-card{
-  position:relative;
-  min-height:410px;
-  padding:36px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:19px;
-  background:
-    linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.008)),
-    rgba(8,11,18,.8);
-}
-
-.experience-card::after{
-  content:"";
-  position:absolute;
-  width:370px;
-  height:370px;
-  right:-170px;
-  bottom:-200px;
-  border:1px solid rgba(230,165,44,.08);
-  border-radius:50%;
-  box-shadow:0 0 0 45px rgba(230,165,44,.014);
-}
-
-.experience-index{
-  color:var(--gold2);
-  font-size:.6rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.experience-card h3{
-  max-width:9ch;
-  margin-top:55px;
-  font-size:2.35rem;
-  line-height:1;
-}
-
-.experience-card p{
-  max-width:45ch;
-  margin-top:17px;
-  color:#7e8797;
-  font-size:.82rem;
-  line-height:1.85;
-}
-
-.experience-list{
-  position:relative;
-  z-index:1;
-  display:grid;
-  gap:10px;
-  margin-top:27px;
-}
-
-.experience-list div{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  color:#adb3bf;
-  font-size:.73rem;
-}
-
-.experience-list span{
-  width:24px;
-  height:24px;
-  display:grid;
-  place-items:center;
-  flex:0 0 auto;
-  border:1px solid rgba(230,165,44,.19);
-  border-radius:50%;
-  color:var(--gold2);
-  font-size:.62rem;
-}
-
-/* CTA */
-
-.cta{
-  padding:20px 0 120px;
-}
-
-.cta-box{
-  position:relative;
-  padding:75px;
-  overflow:hidden;
-  border:1px solid rgba(230,165,44,.17);
-  border-radius:25px;
-  background:
-    radial-gradient(circle at 82% 20%,rgba(230,165,44,.095),transparent 32%),
-    linear-gradient(135deg,rgba(230,165,44,.05),rgba(255,255,255,.016) 52%,rgba(255,255,255,.007));
-}
-
-.cta-box::before{
-  content:"";
-  position:absolute;
-  right:-120px;
-  top:-160px;
-  width:430px;
-  height:430px;
-  border:1px solid rgba(230,165,44,.11);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 45px rgba(230,165,44,.022),
-    0 0 0 90px rgba(230,165,44,.01);
-}
-
-.cta-copy{
-  position:relative;
-  z-index:1;
+  filter:blur(20px);pointer-events:none;
+}
+.hero-content{position:relative;z-index:1}
+.eyebrow{
+  display:inline-block;color:var(--gold2);font-size:.67rem;font-weight:800;
+  letter-spacing:.17em;text-transform:uppercase;
+}
+h1{
+  margin:18px 0 14px;font-family:"Manrope",sans-serif;font-weight:800;
+  font-size:clamp(3rem,7vw,5.7rem);line-height:.94;letter-spacing:-.065em;
   max-width:800px;
 }
-
-.cta h2{
-  margin-top:16px;
-  font-size:clamp(2.8rem,5.6vw,5.5rem);
-  line-height:.95;
-}
-
-.cta p{
-  max-width:53ch;
-  margin-top:20px;
-  color:#7d8696;
-  line-height:1.85;
-  font-size:.84rem;
-}
-
-.cta-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:11px;
-  margin-top:28px;
-}
-
-/* FOOTER */
-
-.footer{
-  padding:62px 0 29px;
-  border-top:1px solid var(--line);
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.35fr repeat(3,1fr);
-  gap:45px;
-}
-
-.footer-brand{
-  max-width:36ch;
-}
-
-.footer-brand p{
-  margin-top:16px;
-  color:#666f7e;
-  font-size:.76rem;
-  line-height:1.8;
-}
-
-.footer-title{
-  margin-bottom:13px;
-  color:#d6dae1;
-  font-size:.62rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.footer-links{
-  display:grid;
-  gap:8px;
-}
-
-.footer-links a{
-  color:#6d7584;
-  font-size:.75rem;
-  transition:color .18s ease;
-}
-
-.footer-links a:hover{
-  color:#fff;
-}
-
-.footer-bottom{
-  margin-top:51px;
-  padding-top:21px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  border-top:1px solid var(--line);
-  color:#5f6777;
-  font-size:.65rem;
-  letter-spacing:.04em;
-}
-
-/* AUTH */
-
-.auth-screen{
-  min-height:100svh;
-  padding:130px 0 90px;
-  display:grid;
-  place-items:center;
-}
-
-.auth-card{
-  position:relative;
-  width:min(100%,500px);
-  padding:34px;
-  overflow:hidden;
-  border:1px solid rgba(230,165,44,.16);
-  border-radius:21px;
-  background:
-    linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01)),
-    rgba(9,13,21,.91);
-  box-shadow:0 35px 110px rgba(0,0,0,.4);
-}
-
-.auth-card::before{
-  content:"";
-  position:absolute;
-  width:150px;
-  height:150px;
-  right:-60px;
-  top:-60px;
-  border:1px solid rgba(230,165,44,.08);
-  border-radius:50%;
-}
-
-.auth-title{
-  margin-top:14px;
-  font-size:2.6rem;
-  line-height:.95;
-}
-
-.auth-sub{
-  margin-top:12px;
-  color:#7d8697;
-  font-size:.8rem;
-  line-height:1.8;
-}
-
-.auth-form{
-  display:grid;
-  gap:15px;
-  margin-top:27px;
-}
-
-.field{
-  display:grid;
-  gap:8px;
-}
-
-.field label{
-  color:#737c8d;
-  font-size:.61rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.field input{
-  width:100%;
-  min-height:48px;
-  padding:0 13px;
-  color:#fff;
-  border:1px solid var(--line);
-  border-radius:11px;
-  outline:none;
-  background:rgba(255,255,255,.025);
-  transition:border-color .2s ease,background .2s ease,box-shadow .2s ease;
-}
-
-.field input::placeholder{
-  color:#4e5664;
-}
-
-.field input:focus{
-  border-color:rgba(230,165,44,.5);
-  background:rgba(255,255,255,.04);
-  box-shadow:0 0 0 4px rgba(230,165,44,.055);
-}
-
-.auth-submit{
-  width:100%;
-  margin-top:4px;
-}
-
-.auth-switch{
-  margin-top:19px;
-  color:#687180;
-  text-align:center;
-  font-size:.75rem;
-}
-
-.auth-switch button{
-  padding:0;
-  border:0;
-  background:none;
-  color:var(--gold2);
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-
-.auth-message{
-  display:none;
-  margin-top:14px;
-  padding:11px 12px;
-  border-radius:10px;
-  border:1px solid var(--line);
-  font-size:.73rem;
-  line-height:1.55;
-}
-
-.auth-message.show{
-  display:block;
-}
-
-.auth-message.ok{
-  color:#8df0bf;
-  background:rgba(80,213,154,.05);
-  border-color:rgba(80,213,154,.18);
-}
-
-.auth-message.error{
-  color:#ff9b9b;
-  background:rgba(255,107,107,.05);
-  border-color:rgba(255,107,107,.18);
-}
-
-/* DASHBOARD */
-
-.dashboard{
-  min-height:100svh;
-  padding:132px 0 105px;
-}
-
-.dashboard-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:20px;
-  padding-bottom:27px;
-  border-bottom:1px solid var(--line);
-}
-
-.dashboard-head h1{
-  margin-top:16px;
-  font-size:clamp(2.4rem,5vw,4.2rem);
-  line-height:.95;
-}
-
-.dashboard-sub{
-  margin-top:10px;
-  color:#727b8b;
-  font-size:.76rem;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  min-height:29px;
-  padding:0 10px;
-  border:1px solid rgba(230,165,44,.18);
-  border-radius:999px;
-  color:#c49a4c;
-  background:rgba(230,165,44,.05);
-  font-size:.59rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.dashboard-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:12px;
-  margin-top:22px;
-}
-
-.dash-panel{
-  min-height:300px;
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.017);
-}
-
-.dash-panel h3{
-  font-size:1rem;
-}
-
-.profile-list{
-  margin:20px 0 0;
-  display:grid;
-}
-
-.profile-row{
-  display:grid;
-  grid-template-columns:145px 1fr;
-  gap:20px;
-  padding:13px 0;
-  border-top:1px solid var(--line);
-  font-size:.75rem;
-}
-
-.profile-row dt{
-  color:#626b7b;
-}
-
-.profile-row dd{
-  margin:0;
-  color:#dce0e6;
-  overflow-wrap:anywhere;
-}
-
-.next-list{
-  display:grid;
-  gap:10px;
-  margin-top:20px;
-}
-
-.next-item{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  padding:14px 0;
-  border-top:1px solid var(--line);
-}
-
-.next-dot{
-  width:24px;
-  height:24px;
-  flex:0 0 auto;
-  display:grid;
-  place-items:center;
-  color:var(--gold2);
-  border:1px solid rgba(230,165,44,.18);
-  border-radius:50%;
-  font-size:.6rem;
-}
-
-.next-item strong{
-  display:block;
-  color:#e1e4ea;
-  font-size:.76rem;
-}
-
-.next-item span{
-  display:block;
-  margin-top:3px;
-  color:#626a79;
-  font-size:.68rem;
-}
-
-/* ADMIN */
-
-.mun-logo {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-}
-
-.admin{
-  min-height:100svh;
-  padding:132px 0 110px;
-}
-
-.admin-grid{
-  display:grid;
-  gap:14px;
-  margin-top:24px;
-}
-
-.admin-panel{
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.017);
-}
-
-.admin-panel h3{
-  font-size:1rem;
-}
-
-.admin-form{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:20px;
-}
-
-.admin-form .span-2{
-  grid-column:1/-1;
-}
-
-.admin-actions{
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-
-.table-wrap{
-  margin-top:20px;
-  overflow:auto;
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-
-table{
-  width:100%;
-  min-width:720px;
-  border-collapse:collapse;
-}
-
-th,
-td{
-  padding:13px 14px;
-  text-align:left;
-  border-bottom:1px solid var(--line);
-  font-size:.71rem;
-}
-
-th{
-  color:#6e7787;
-  background:rgba(255,255,255,.02);
-  font-size:.59rem;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
-
-td{
-  color:#bcc2cc;
-}
-
-tbody tr:hover{
-  background:rgba(255,255,255,.02);
-}
-
-.row-actions{
-  display:flex;
-  gap:7px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
-  .hero-layout{
-    grid-template-columns:1fr;
-    gap:15px;
-  }
-
-  .hero-copy{
-    max-width:760px;
-  }
-
-  .hero-orb{
-    min-height:470px;
-    margin-top:-40px;
-  }
-
-  .hero-card{
-    left:4%;
-  }
-
-  .committee-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .member-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .experience-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1.2fr 1fr 1fr;
-  }
-
-  .footer-grid>div:last-child{
-    display:none;
-  }
-}
-
-@media(max-width:900px){
-  .container{
-    width:min(var(--max),calc(100% - 34px));
-  }
-
-  .site-nav{
-    height:70px;
-  }
-
-  .nav-menu{
-    position:fixed;
-    top:70px;
-    left:0;
-    right:0;
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:3px;
-    padding:14px 17px 20px;
-    border-bottom:1px solid var(--line);
-    background:rgba(4,6,11,.97);
-    backdrop-filter:blur(18px);
-    transform:translateY(-15px);
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .2s ease,transform .2s var(--ease);
-  }
-
-  .nav-menu.open{
-    opacity:1;
-    transform:none;
-    pointer-events:auto;
-  }
-
-  .nav-link{
-    width:100%;
-    min-height:47px;
-  }
-
-  .nav-actions{
-    margin-top:7px;
-    padding-top:10px;
-    border-top:1px solid var(--line);
-  }
-
-  .mobile-toggle{
-    display:grid;
-  }
-
-  .hero{
-    padding-top:120px;
-  }
-
-  .hero-title{
-    font-size:clamp(4rem,12vw,6.8rem);
-  }
-
-  .section{
-    padding:90px 0;
-  }
-
-  .section-head{
-    grid-template-columns:1fr;
-    gap:22px;
-  }
-
-  .section-head h2{
-    max-width:none;
-  }
-
-  .about-layout{
-    grid-template-columns:1fr;
-    gap:39px;
-  }
-
-  .stat-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stat:nth-child(2){
-    border-right:0;
-  }
-
-  .stat:nth-child(-n+2){
-    border-bottom:1px solid var(--line);
-  }
-
-  .dashboard-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:680px){
-  .container{
-    width:min(var(--max),calc(100% - 28px));
-  }
-
-  .brand{
-    font-size:.7rem;
-  }
-
-  .brand-mark{
-    width:34px;
-    height:34px;
-  }
-
-  .hero{
-    padding:105px 0 70px;
-  }
-
-  .hero-title{
-    font-size:clamp(3.35rem,16vw,5.6rem);
-  }
-
-  .hero-lede{
-    font-size:.88rem;
-  }
-
-  .hero-orb{
-    min-height:340px;
-  }
-
-  .orb-rings{
-    width:min(390px,98vw);
-  }
-
-  .orb-core{
-    width:min(280px,70vw);
-  }
-
-  .hero-card{
-    width:220px;
-    left:0;
-    bottom:-2px;
-    padding:14px;
-  }
-
-  .hero-meta{
-    flex-direction:column;
-    gap:9px;
-  }
-
-  .stat-grid{
-    grid-template-columns:1fr;
-  }
-
-  .stat{
-    min-height:125px;
-    border-right:0;
-    border-bottom:1px solid var(--line);
-  }
-
-  .stat:last-child{
-    border-bottom:0;
-  }
-
-  .committee-grid{
-    grid-template-columns:1fr;
-  }
-
-  .member-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .about-panels{
-    grid-template-columns:1fr;
-  }
-
-  .experience-card{
-    min-height:390px;
-    padding:28px;
-  }
-
-  .cta{
-    padding-bottom:80px;
-  }
-
-  .cta-box{
-    padding:42px 27px;
-  }
-
-  .cta h2{
-    font-size:clamp(2.5rem,13vw,4rem);
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-    gap:29px;
-  }
-
-  .footer-grid>div:first-child{
-    grid-column:1/-1;
-  }
-
-  .footer-bottom{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .auth-screen{
-    padding:100px 0 70px;
-  }
-
-  .auth-card{
-    padding:27px 20px;
-  }
-
-  .dashboard,
-  .admin{
-    padding-top:105px;
-  }
-
-  .dashboard-head{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .profile-row{
-    grid-template-columns:1fr;
-    gap:4px;
-  }
-
-  .admin-form{
-    grid-template-columns:1fr;
-  }
-
-  .admin-form .span-2{
-    grid-column:auto;
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,
-  *::before,
-  *::after{
-    animation-duration:.001ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.001ms!important;
-  }
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  .reveal{
-    opacity:1;
-    transform:none;
-  }
+.subtitle{font-size:1rem;color:var(--muted);margin:0 0 22px}
+.dates{
+  display:inline-flex;align-items:center;padding:9px 14px;
+  border:1px solid rgba(230,165,44,.22);border-radius:999px;
+  background:rgba(230,165,44,.055);color:#d8dce4;
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;
+}
+.card{
+  position:relative;background:rgba(255,255,255,.017);
+  border:1px solid var(--line);border-radius:18px;padding:29px;
+  margin-bottom:14px;overflow:hidden;
+  box-shadow:0 25px 70px rgba(0,0,0,.18);
+}
+.card::before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:1px;
+  background:linear-gradient(90deg,rgba(230,165,44,.4),transparent 45%);
+}
+.section-title{
+  margin:0 0 25px;font-family:"Manrope",sans-serif;font-size:1rem;
+  font-weight:800;letter-spacing:-.02em;
+}
+.question{margin-bottom:27px}
+.question:last-child{margin-bottom:0}
+label,.label{
+  display:block;color:#dce0e7;font-size:.72rem;font-weight:700;
+  margin-bottom:9px;line-height:1.55;
+}
+.required{color:var(--gold2)}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],textarea,select{
+  width:100%;border:1px solid var(--line);background:rgba(255,255,255,.022);
+  color:var(--text);border-radius:10px;padding:13px 14px;
+  font:inherit;font-size:.78rem;outline:none;transition:border .2s,box-shadow .2s,background .2s;
+}
+input::placeholder,textarea::placeholder{color:#555d6c}
+input:focus,textarea:focus,select:focus{
+  border-color:rgba(230,165,44,.55);
+  box-shadow:0 0 0 3px rgba(230,165,44,.08);
+  background:rgba(255,255,255,.028);
+}
+textarea{min-height:128px;resize:vertical;line-height:1.7}
+select{appearance:auto;cursor:pointer}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.choice{
+  display:flex;align-items:center;gap:9px;padding:13px 14px!important;
+  border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.018);
+  cursor:pointer;transition:.2s;color:#aeb5c3!important;font-size:.72rem!important;
+}
+.choice:hover{border-color:var(--line2);background:rgba(255,255,255,.03)}
+.choice:has(input:checked){
+  border-color:rgba(230,165,44,.48);background:rgba(230,165,44,.055);
+  color:#f0f2f5!important;
+}
+.choice input{accent-color:var(--gold);flex:none}
+.upload{
+  border:1px dashed rgba(255,255,255,.14);background:rgba(255,255,255,.018);
+  padding:17px;border-radius:11px;
+}
+.upload input[type=file]{width:100%;font:inherit;color:#8c94a5;font-size:.72rem}
+.upload small{display:block;color:#616a7a;margin-top:8px;font-size:.63rem;line-height:1.65}
+.dob-scroll{display:grid;grid-template-columns:.75fr 1.45fr 1fr;gap:9px}
+.dob-scroll select{min-height:46px}
+.confirm{display:flex;align-items:flex-start;gap:12px;color:#9da5b3!important}
+.confirm input{margin-top:3px;accent-color:var(--gold);width:17px;height:17px;flex:none}
+.actions{display:flex;justify-content:flex-end;gap:9px;padding-top:5px}
+button{
+  border:1px solid transparent;border-radius:10px;padding:12px 20px;
+  font:inherit;font-size:.72rem;font-weight:800;cursor:pointer;transition:.2s;
+}
+.submit{
+  background:var(--gold);color:#111;
+  box-shadow:0 10px 30px rgba(230,165,44,.13);
+}
+.submit:hover{background:var(--gold2);transform:translateY(-1px)}
+.submit:disabled{opacity:.6;cursor:wait;transform:none}
+.reset{background:rgba(255,255,255,.035);border-color:var(--line);color:#b8bec9}
+.reset:hover{background:rgba(255,255,255,.06);color:#fff}
+.note{color:#616a7a;font-size:.62rem;line-height:1.7;margin:17px 0 0}
+.error{color:var(--danger);font-size:.62rem;margin-top:7px;display:none}
+.success{
+  display:none;margin-top:18px;border:1px solid rgba(92,222,166,.25);
+  background:rgba(92,222,166,.07);padding:14px;border-radius:10px;
+  color:#bcebd4;font-size:.72rem;line-height:1.6;
+}
+.footer{text-align:center;color:#4f5765;font-size:.61rem;padding:14px 0 55px;letter-spacing:.04em}
+@media(max-width:650px){
+  .container{width:min(100% - 28px,940px)}
+  .hero{padding:105px 0 40px;min-height:34vh}
+  h1{font-size:clamp(3rem,15vw,5rem)}
+  .card{padding:21px}
+  .choice-grid{grid-template-columns:1fr}
+  .actions{flex-direction:column-reverse}
+  .actions button{width:100%}
 }
 </style>
 </head>
-
 <body>
 
-<nav class="site-nav" id="siteNav">
-  <div class="container nav-inner">
-
-    <a href="#/" class="brand" aria-label="PACE International MUN home">
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand" aria-label="PACE International MUN home">
       <span class="brand-mark"><span>PI</span></span>
       <span>PACE International MUN</span>
     </a>
-
-    <div class="nav-menu" id="navMenu">
-      <a href="#/about" class="nav-link">Conference</a>
-      <a href="#/committees" class="nav-link">Committees</a>
-      <a href="#/secretariat" class="nav-link">Secretariat</a>
-      <a href="register/index.html" class="nav-link">Register</a>
-      <div class="nav-actions" id="navAuthArea"></div>
-    </div>
-
-    <button
-      class="mobile-toggle"
-      id="mobileToggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-      </svg>
-    </button>
-
+    <a href="../index.html#/" class="topbar-back">
+      <span aria-hidden="true">←</span> Back to site
+    </a>
   </div>
-</nav>
+</div>
 
-<main id="app"></main>
-
-<footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div class="footer-brand">
-        <a href="#/" class="brand">
-          <span class="brand-mark"><span>PI</span></span>
-          <span>PACE International MUN</span>
-        </a>
-
-        <p>
-          A student-led diplomatic conference built around preparation,
-          procedure, leadership and meaningful debate.
-        </p>
-      </div>
-
-      <div>
-        <div class="footer-title">Navigate</div>
-        <div class="footer-links">
-          <a href="#/">Home</a>
-          <a href="#/about">Conference</a>
-          <a href="#/committees">Committees</a>
-          <a href="#/secretariat">Secretariat</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Delegates</div>
-        <div class="footer-links">
-          <a href="#/login">Delegate portal</a>
-          <a href="register/index.html">Registration</a>
-          <a href="#/committees">Committees</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <a href="mailto:secretariat@paceinternational.org">Secretariat</a>
-          <a href="#/about">Conference information</a>
-          <a href="#/login">Portal access</a>
-        </div>
-      </div>
-
+<main class="container">
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">PACE International · Model United Nations</div>
+      <h1>PaceMUN II<br><span style="color:var(--gold2)">Chair Applications</span></h1>
+      <p class="subtitle">May the best Chair win.</p>
+      <div class="dates">31st October &nbsp;·&nbsp; 1st November</div>
     </div>
+  </header>
 
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> PACE International MUN</span>
-      <span>Diplomacy · Leadership · Excellence</span>
-    </div>
+  <form id="chairForm" novalidate>
+    <section class="card">
+      <div class="eyebrow" style="margin-bottom:7px">01 · Candidate</div><h2 class="section-title">Personal Information</h2>
 
-  </div>
-</footer>
+      <div class="question">
+        <label for="name">1. Full Name <span class="required">*</span></label>
+        <input id="name" name="fullName" type="text" required placeholder="Enter your full name">
+      </div>
 
-<script type="module">
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.116.0";
+      <div class="question">
+        <label for="school">2. School/University Name <span class="required">*</span></label>
+        <input id="school" name="school" type="text" required>
+      </div>
 
-/* =========================================================
-   SUPABASE
-   ========================================================= */
+      <div class="question">
+        <label>3. Date of Birth <span class="required">*</span></label>
+        <div class="dob-scroll">
+          <select id="dobDay" aria-label="Day" required>
+            <option value="">Day</option>
+          </select>
+          <select id="dobMonth" aria-label="Month" required>
+            <option value="">Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+          <select id="dobYear" aria-label="Year" required>
+            <option value="">Year</option>
+          </select>
+        </div>
+        <input id="dob" name="dateOfBirth" type="hidden" required>
+      </div>
 
-const SUPABASE_URL =
-  "https://whwilpuynwudlddbxmwk.supabase.co";
+      <div class="question">
+        <label for="munCount">4. How many MUNs have you attended so far? <span class="required">*</span></label>
+        <input id="munCount" name="munCount" type="number" min="0" step="1" required placeholder="e.g. 8">
+      </div>
+    </section>
 
-const SUPABASE_KEY =
-  "sb_publishable_iTuvrnFtnRTPtsd8JWqFTg_dTB2yTzr";
+    <section class="card">
+      <div class="eyebrow" style="margin-bottom:7px">02 · Experience</div><h2 class="section-title">MUN Experience</h2>
 
-const supabase = createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY,
-  {
-    global:{
-      headers:{
-        apikey:SUPABASE_KEY
-      }
-    },
-    auth:{
-      persistSession:true,
-      autoRefreshToken:true,
-      detectSessionInUrl:true
-    }
+      <div class="question">
+        <label for="munCertificates">5. MUN participation certificates/awards received from prior conferences <span class="required">*</span></label>
+        <div class="upload">
+          <input id="munCertificates" name="munCertificates" type="file" multiple required>
+          <small>Maximum 5 files · Maximum 100 MB per file · Word, Excel, PowerPoint, PDF, images, video or audio.</small>
+          <div class="error" id="munCertificatesError"></div>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="chairCount">6. How many Chairing Experiences do you have so far? <span class="required">*</span></label>
+        <input id="chairCount" name="chairCount" type="number" min="0" step="1" required placeholder="e.g. 3">
+      </div>
+
+      <div class="question">
+        <label for="chairCertificates">7. MUN chair certificates/awards received from prior conferences <span class="required">*</span></label>
+        <div class="upload">
+          <input id="chairCertificates" name="chairCertificates" type="file" multiple required>
+          <small>Maximum 5 files · Maximum 100 MB per file · Word, Excel, PowerPoint, PDF, images, video or audio.</small>
+          <div class="error" id="chairCertificatesError"></div>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="resume">8. Attach Your Resume <span class="required">*</span></label>
+        <div class="upload">
+          <input id="resume" name="resume" type="file" required>
+          <small>Maximum 1 file · Maximum 100 MB · Word, Excel, PowerPoint, PDF, image, video or audio.</small>
+          <div class="error" id="resumeError"></div>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="lor">9. LOR <span class="required">*</span></label>
+        <div class="upload">
+          <input id="lor" name="lor" type="file" required>
+          <small>Maximum 1 file · Maximum 100 MB · Word, Excel, PowerPoint, PDF, image, video or audio.</small>
+          <div class="error" id="lorError"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow" style="margin-bottom:7px">03 · The floor</div><h2 class="section-title">Committee Preferences</h2>
+
+      <div class="question">
+        <label>10. Preferred Committee — First Preference <span class="required">*</span></label>
+        <div class="choice-grid">
+          <label class="choice"><input type="radio" name="firstPreference" value="WHO (Junior Committee — 6-8th Grade)" required> WHO <span>— Junior</span></label>
+          <label class="choice"><input type="radio" name="firstPreference" value="UNHRC (Intermediate)"> UNHRC <span>— Intermediate</span></label>
+          <label class="choice"><input type="radio" name="firstPreference" value="UNODC (Intermediate)"> UNODC <span>— Intermediate</span></label>
+          <label class="choice"><input type="radio" name="firstPreference" value="UNCTAD (Advanced)"> UNCTAD <span>— Advanced</span></label>
+          <label class="choice"><input type="radio" name="firstPreference" value="INTERPOL (Advanced)"> INTERPOL <span>— Advanced</span></label>
+          <label class="choice"><input type="radio" name="firstPreference" value="DISEC (Beginner)"> DISEC <span>— Beginner</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label>11. Preferred Committee — Second Preference <span class="required">*</span></label>
+        <div class="choice-grid">
+          <label class="choice"><input type="radio" name="secondPreference" value="WHO (Junior Committee — 6-8th Grade)" required> WHO <span>— Junior</span></label>
+          <label class="choice"><input type="radio" name="secondPreference" value="UNHRC (Intermediate)"> UNHRC <span>— Intermediate</span></label>
+          <label class="choice"><input type="radio" name="secondPreference" value="UNODC (Intermediate)"> UNODC <span>— Intermediate</span></label>
+          <label class="choice"><input type="radio" name="secondPreference" value="UNCTAD (Advanced)"> UNCTAD <span>— Advanced</span></label>
+          <label class="choice"><input type="radio" name="secondPreference" value="INTERPOL (Advanced)"> INTERPOL <span>— Advanced</span></label>
+          <label class="choice"><input type="radio" name="secondPreference" value="DISEC (Beginner)"> DISEC <span>— Beginner</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="whyFirst">12. Why did you pick your first preference as your first preference? <span class="required">*</span></label>
+        <textarea id="whyFirst" name="whyFirst" required placeholder="Tell us why this committee suits you..."></textarea>
+      </div>
+
+      <div class="question">
+        <label for="gavel">13. If your gavel could speak, what would your gavel tell about you after a conference? <span class="required">*</span></label>
+        <textarea id="gavel" name="gavel" required></textarea>
+      </div>
+
+      <div class="question">
+        <label for="whyPace">14. Why would you like to attend PaceMUN II? <span class="required">*</span></label>
+        <textarea id="whyPace" name="whyPace" required></textarea>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow" style="margin-bottom:7px">04 · Details</div><h2 class="section-title">Contact & Preferences</h2>
+
+      <div class="question">
+        <label for="email">15. Email Address — for selection results <span class="required">*</span></label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="question">
+        <label for="phone">16. Contact No. — for WhatsApp <span class="required">*</span></label>
+        <input id="phone" name="phone" type="tel" required placeholder="+971 5X XXX XXXX">
+      </div>
+
+      <div class="question">
+        <label for="coordinatorPhone">17. MUN Coordinator's Contact No. — for WhatsApp <span class="required">*</span></label>
+        <input id="coordinatorPhone" name="coordinatorPhone" type="tel" required>
+      </div>
+
+      <div class="question">
+        <label>18. Food Preference <span class="required">*</span></label>
+        <div class="choice-grid">
+          <label class="choice"><input type="radio" name="food" value="Veg" required> Veg</label>
+          <label class="choice"><input type="radio" name="food" value="Non Veg"> Non Veg</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label for="allergies">19. Any food allergy/allergies?</label>
+        <textarea id="allergies" name="allergies" placeholder="Write 'None' if you have no allergies."></textarea>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow" style="margin-bottom:7px">05 · Confirmation</div><h2 class="section-title">Declaration</h2>
+      <div class="question">
+        <label class="confirm">
+          <input type="checkbox" id="confirmation" name="confirmation" required>
+          <span>20. I confirm that all information provided is accurate and that I am willing to fulfill the responsibilities associated with this position, such as attending training and any other required sessions/meetings. <span class="required">*</span></span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="reset" class="reset">Clear Form</button>
+        <button type="submit" class="submit">Submit Application →</button>
+      </div>
+      <div class="success" id="success">Application validated successfully. To actually receive submissions and uploaded files, connect this form to a backend/database or form service.</div>
+      <p class="note">Submissions are securely stored in the connected Supabase project. Uploaded documents are stored in a private Supabase Storage bucket.</p>
+    </section>
+  </form>
+
+  <footer class="footer">PaceMUN II · Chair Applications · 31st Oct & 1st Nov</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://whwilpuynwudlddbxmwk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_iTuvrnFtnRTPtsd8JWqFTg_dTB2yTzr";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const MAX = 100 * 1024 * 1024;
+const allowed = new Set([
+  "application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "application/vnd.ms-powerpoint","application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  "application/pdf","image/*","video/*","audio/*"
+]);
+
+function validFile(file){
+  if(file.size > MAX) return "Each file must be 100 MB or smaller.";
+  if(allowed.has(file.type) || [...allowed].some(x => x.endsWith("/*") && file.type.startsWith(x.slice(0,-1)))) return "";
+  return "This file type is not supported.";
+}
+
+function validateUpload(id, maxFiles){
+  const input=document.getElementById(id), error=document.getElementById(id+"Error");
+  error.style.display="none"; error.textContent="";
+  if(input.required && input.files.length===0){
+    error.textContent="Please upload at least one file."; error.style.display="block"; return false;
   }
-);
-
-
-/* =========================================================
-   STATIC CONTENT
-   ========================================================= */
-
-const COMMITTEES = [
-  {
-    code:"UNSC",
-    name:"United Nations Security Council",
-    topic:"Maritime security, territorial disputes and strategic stability.",
-    level:"Advanced"
-  },
-  {
-    code:"GA1",
-    name:"General Assembly — Disarmament",
-    topic:"Autonomous weapons systems and the future of armed conflict.",
-    level:"Intermediate"
-  },
-  {
-    code:"ECOFIN",
-    name:"Economic & Financial Affairs",
-    topic:"Sovereign debt restructuring and sustainable development.",
-    level:"Intermediate"
-  },
-  {
-    code:"WHO",
-    name:"World Health Organization",
-    topic:"Equitable access to pandemic countermeasures.",
-    level:"Beginner"
-  },
-  {
-    code:"HCC",
-    name:"Historical Crisis Cabinet",
-    topic:"Europe in 1815 — diplomacy, alliances and a changing continent.",
-    level:"Advanced"
-  },
-  {
-    code:"PRESS",
-    name:"International Press Corps",
-    topic:"Live reporting, interviews and visual coverage from the floor.",
-    level:"All Levels"
+  if(input.files.length>maxFiles){
+    error.textContent=`You can upload a maximum of ${maxFiles} file${maxFiles>1?"s":""}.`; error.style.display="block"; return false;
   }
-];
-
-const EXPERIENCE = [
-  {
-    title:"Research",
-    eyebrow:"Before the floor",
-    text:"Every committee starts before the opening ceremony. Delegates receive structured material designed to reward preparation rather than improvisation.",
-    items:[
-      "Background guides",
-      "Position preparation",
-      "Committee briefing"
-    ]
-  },
-  {
-    title:"Debate",
-    eyebrow:"On the floor",
-    text:"The room should feel alive without becoming theatrical. Formal procedure, strong speaking and constructive negotiation remain at the centre of every session.",
-    items:[
-      "Structured caucuses",
-      "Formal debate",
-      "Resolution drafting"
-    ]
+  for(const file of input.files){
+    const msg=validFile(file);
+    if(msg){error.textContent=msg;error.style.display="block";return false;}
   }
-];
-
-const state = {
-  session:null,
-  profile:null
-};
-
-const routes = {
-  "/":renderHome,
-  "/about":renderAbout,
-  "/committees":renderCommittees,
-  "/secretariat":renderSecretariat,
-  "/login":renderLogin,
-  "/dashboard":renderDashboard,
-  "/admin":renderAdmin
-};
-
-
-/* =========================================================
-   HELPERS
-   ========================================================= */
-
-const $ = selector => document.querySelector(selector);
-
-function escapeHtml(value){
-  return String(value ?? "").replace(/[&<>"']/g,char=>({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    "\"":"&quot;",
-    "'":"&#39;"
-  }[char]));
+  return true;
 }
 
-function initials(name){
-  return String(name || "?")
-    .trim()
-    .split(/\s+/)
-    .slice(0,2)
-    .map(word=>word[0]?.toUpperCase() || "")
-    .join("");
+const dobDay = document.getElementById("dobDay");
+const dobMonth = document.getElementById("dobMonth");
+const dobYear = document.getElementById("dobYear");
+const dobHidden = document.getElementById("dob");
+
+for(let d=1; d<=31; d++){
+  const o=document.createElement("option");
+  o.value=String(d).padStart(2,"0");
+  o.textContent=d;
+  dobDay.appendChild(o);
 }
-
-function currentPath(){
-  const path = location.hash.replace(/^#/,"");
-  return path || "/";
+const currentYear = new Date().getFullYear();
+for(let y=currentYear; y>=1980; y--){
+  const o=document.createElement("option");
+  o.value=y;
+  o.textContent=y;
+  dobYear.appendChild(o);
 }
-
-function setMessage(element,text,type){
-  element.textContent = text;
-  element.className = "auth-message show " + (type || "");
-}
-
-function renderPage(html){
-  $("#app").innerHTML = html;
-  window.scrollTo({
-    top:0,
-    behavior:"instant"
-  });
-  observeReveals();
-  updateNav();
-}
-
-function observeReveals(){
-  const elements = document.querySelectorAll(".reveal");
-
-  if(!("IntersectionObserver" in window)){
-    elements.forEach(element=>element.classList.add("in"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("in");
-        observer.unobserve(entry.target);
-      }
-    });
-  },{
-    threshold:.08,
-    rootMargin:"0px 0px -40px 0px"
-  });
-
-  elements.forEach(element=>observer.observe(element));
-}
-
-function closeMobileMenu(){
-  $("#navMenu")?.classList.remove("open");
-  $("#mobileToggle")?.setAttribute("aria-expanded","false");
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-function updateNav(){
-  const area = $("#navAuthArea");
-
-  if(!area) return;
-
-  if(state.session){
-
-    const destination =
-      state.profile?.role === "admin"
-      ? "#/admin"
-      : "#/dashboard";
-
-    area.innerHTML = `
-      <a href="${destination}" class="btn btn-sm btn-ghost">
-        Portal
-      </a>
-
-      <button
-        type="button"
-        class="btn btn-sm"
-        id="signOutButton"
-      >
-        Sign out
-      </button>
-    `;
-
-    $("#signOutButton")?.addEventListener("click",async()=>{
-      await supabase.auth.signOut();
-      state.session = null;
-      state.profile = null;
-      location.hash = "#/";
-      updateNav();
-    });
-
-  }else{
-
-    area.innerHTML = `
-      <a href="#/login" class="btn btn-sm btn-primary">
-        Delegate portal
-      </a>
-    `;
-
-  }
-}
-
-async function router(){
-
-  const path = currentPath();
-
-  const render = routes[path] || routes["/"];
-
-  if(
-    (path === "/dashboard" || path === "/admin") &&
-    !state.session
-  ){
-    location.hash = "#/login";
-    return;
-  }
-
-  if(
-    path === "/admin" &&
-    state.profile?.role !== "admin"
-  ){
-    location.hash = "#/dashboard";
-    return;
-  }
-
-  if(
-    path === "/login" &&
-    state.session
-  ){
-    location.hash =
-      state.profile?.role === "admin"
-      ? "#/admin"
-      : "#/dashboard";
-
-    return;
-  }
-
-  await render();
-  updateNav();
-}
-
-
-/* =========================================================
-   HOME
-   ========================================================= */
-
-function renderHome(){
-
-  renderPage(`
-
-    <section class="hero">
-
-      <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-      <div class="hero-glow-2"></div>
-
-      <div class="container hero-layout">
-
-        <div class="hero-copy">
-
-          <span class="eyebrow reveal">
-            PACE International · Model United Nations
-          </span>
-
-          <h1 class="hero-title reveal">
-            <span>Speak.</span>
-            <span class="outline">Debate.</span>
-            <span>Lead.</span>
-          </h1>
-
-          <p class="hero-lede reveal">
-            An elevated MUN experience for students who take diplomacy seriously.
-            Prepare deeply, argue clearly, negotiate intelligently and leave the
-            room having built something stronger than you entered with.
-          </p>
-
-          <div class="hero-actions reveal">
-
-            <a href="#/login" class="btn btn-primary">
-              Enter delegate portal
-
-              <span class="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 12h14M13 6l6 6-6 6"/>
-                </svg>
-              </span>
-            </a>
-
-            <a href="#/committees" class="btn">
-              Explore committees
-            </a>
-
-          </div>
-
-          <div class="hero-meta reveal">
-            <span><strong>Session XIV</strong></span>
-            <span>March 12–14, 2027</span>
-            <span>340+ delegates</span>
-            <span>52 schools</span>
-          </div>
-
-        </div>
-
-
-        <div class="hero-orb">
-
-          <div class="orb-rings"></div>
-
-          <div class="orb-core">
-
-            <div class="seal">
-
-              <div class="seal-inner">
-                <img src="a.png" alt="PACE International MUN Seal" class="mun-logo">
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="hero-card">
-
-            <div class="tiny">
-              Conference focus
-            </div>
-
-            <strong>
-              Diplomacy without the theatre.
-            </strong>
-
-            <div class="divider"></div>
-
-            <div class="hero-card-row">
-              <span>Format</span>
-              <b>In person</b>
-            </div>
-
-            <div class="hero-card-row">
-              <span>Experience</span>
-              <b>Student-led</b>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="ticker" aria-hidden="true">
-
-      <div class="ticker-track">
-
-        ${[
-          "Research",
-          "Debate",
-          "Diplomacy",
-          "Leadership",
-          "Procedure",
-          "Resolution",
-          "Negotiation",
-          "Excellence",
-          "Research",
-          "Debate",
-          "Diplomacy",
-          "Leadership",
-          "Procedure",
-          "Resolution",
-          "Negotiation",
-          "Excellence"
-        ].map(item=>`
-          <div class="ticker-item">
-            ${item}
-            <span>✦</span>
-          </div>
-        `).join("")}
-
-      </div>
-
-    </div>
-
-
-    <section class="section stats">
-
-      <div class="container">
-
-        <div class="stat-grid reveal">
-
-          <div class="stat">
-            <div class="stat-number">14</div>
-            <div class="stat-label">Annual sessions</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-number">52</div>
-            <div class="stat-label">Schools represented</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-number">9</div>
-            <div class="stat-label">Committees this year</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-number">340+</div>
-            <div class="stat-label">Delegates expected</div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="about-layout">
-
-          <div class="reveal">
-
-            <span class="eyebrow">
-              The conference
-            </span>
-
-            <h2 class="about-title">
-              Built for students who care about
-              <em>substance.</em>
-            </h2>
-
-          </div>
-
-          <div class="about-body reveal">
-
-            <p>
-              PACE International MUN is designed around a simple principle:
-              the best conference is the one that gives prepared delegates the
-              room to think, speak, negotiate and lead.
-            </p>
-
-            <p>
-              That means clear procedure, serious research, fair chairing,
-              purposeful crisis updates and committees that reward ideas over
-              theatrics.
-            </p>
-
-            <div class="about-callout">
-              A modern conference aesthetic. A traditional diplomatic standard.
-              One student-led experience built around the floor.
-            </div>
-
-            <div class="about-panels">
-
-              <div class="mini-panel reveal">
-                <div class="mini-panel-number">01</div>
-                <h4>Prepared</h4>
-                <p>
-                  Background material designed to get delegates ready before
-                  the first motion.
-                </p>
-              </div>
-
-              <div class="mini-panel reveal">
-                <div class="mini-panel-number">02</div>
-                <h4>Precise</h4>
-                <p>
-                  Consistent procedure with chairs who know how to move a room.
-                </p>
-              </div>
-
-              <div class="mini-panel reveal">
-                <div class="mini-panel-number">03</div>
-                <h4>Memorable</h4>
-                <p>
-                  A polished conference experience without losing the energy.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="section committees">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">The floor</span>
-            <h2>Committees</h2>
-          </div>
-
-          <p>
-            Distinct rooms, different levels of complexity and different ways
-            to make your argument matter.
-          </p>
-
-        </div>
-
-        <div class="committee-grid">
-
-          ${COMMITTEES.map((committee,index)=>
-            renderCommitteeCard(committee,index)
-          ).join("")}
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">The team</span>
-            <h2>Secretariat</h2>
-          </div>
-
-          <p>
-            The people preparing the committees, shaping the room and keeping
-            the conference moving.
-          </p>
-
-        </div>
-
-        <div id="memberGridHome"></div>
-
-      </div>
-
-    </section>
-
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">The experience</span>
-            <h2>More than a committee.</h2>
-          </div>
-
-          <p>
-            Great MUN begins before the speech and continues after the room
-            finally reaches a decision.
-          </p>
-
-        </div>
-
-        <div class="experience-grid">
-
-          ${EXPERIENCE.map((item,index)=>`
-
-            <article class="experience-card reveal">
-
-              <div class="experience-index">
-                0${index+1} · ${escapeHtml(item.eyebrow)}
-              </div>
-
-              <h3>
-                ${escapeHtml(item.title)}
-              </h3>
-
-              <p>
-                ${escapeHtml(item.text)}
-              </p>
-
-              <div class="experience-list">
-
-                ${item.items.map((item,index)=>`
-                  <div>
-                    <span>${index+1}</span>
-                    ${escapeHtml(item)}
-                  </div>
-                `).join("")}
-
-              </div>
-
-            </article>
-
-          `).join("")}
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="cta">
-
-      <div class="container">
-
-        <div class="cta-box reveal">
-
-          <div class="cta-copy">
-
-            <span class="eyebrow">
-              Ready when you are
-            </span>
-
-            <h2>
-              Take your place on the floor.
-            </h2>
-
-            <p>
-              Access the delegate portal, view your conference information
-              and prepare for the next session.
-            </p>
-
-            <div class="cta-actions">
-
-              <a href="#/login" class="btn btn-primary">
-                Open delegate portal
-
-                <span class="icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M5 12h14M13 6l6 6-6 6"/>
-                  </svg>
-                </span>
-              </a>
-
-              <a href="#/about" class="btn">
-                Learn about PACE
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-
-  loadMembers($("#memberGridHome"));
-}
-
-
-/* =========================================================
-   COMMITTEE CARD
-   ========================================================= */
-
-function renderCommitteeCard(committee,index){
-
-  return `
-
-    <article class="committee reveal">
-
-      <div class="committee-code">
-        ${escapeHtml(committee.code)}
-      </div>
-
-      <div class="committee-number">
-        0${index+1}
-      </div>
-
-      <h3>
-        ${escapeHtml(committee.name)}
-      </h3>
-
-      <p class="committee-topic">
-        ${escapeHtml(committee.topic)}
-      </p>
-
-      <div class="committee-footer">
-
-        <span class="pill">
-          ${escapeHtml(committee.level)}
-        </span>
-
-        <span class="pill pill-muted">
-          Session XIV
-        </span>
-
-      </div>
-
-    </article>
-
-  `;
-}
-
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-function renderAbout(){
-
-  renderPage(`
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">About PACE</span>
-            <h2>A conference built around the floor.</h2>
-          </div>
-
-          <p>
-            Professional in presentation, student-led in spirit and deliberately
-            focused on the quality of debate.
-          </p>
-
-        </div>
-
-        <div class="about-layout">
-
-          <div class="reveal">
-            <h3 class="about-title">
-              Think first.
-              Then <em>speak.</em>
-            </h3>
-          </div>
-
-          <div class="about-body reveal">
-
-            <p>
-              PACE International MUN brings together students for a conference
-              that values preparation, diplomacy and meaningful collaboration.
-            </p>
-
-            <p>
-              The experience combines formal debate, negotiation, committee
-              procedure and crisis-style decision making into one academic event.
-            </p>
-
-            <p>
-              The visual identity is modern and restrained:
-              dark surfaces, gold details, sharp typography and enough negative
-              space for the content to breathe.
-            </p>
-
-            <div class="about-panels">
-
-              <div class="mini-panel">
-                <div class="mini-panel-number">01</div>
-                <h4>Fair chairing</h4>
-                <p>
-                  Clear expectations and consistent committee management.
-                </p>
-              </div>
-
-              <div class="mini-panel">
-                <div class="mini-panel-number">02</div>
-                <h4>Serious research</h4>
-                <p>
-                  Preparation is treated as part of the conference itself.
-                </p>
-              </div>
-
-              <div class="mini-panel">
-                <div class="mini-panel-number">03</div>
-                <h4>Real collaboration</h4>
-                <p>
-                  Delegates are encouraged to negotiate rather than perform.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="section committees">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">What defines it</span>
-            <h2>Three standards.</h2>
-          </div>
-
-          <p>
-            Everything else follows from these.
-          </p>
-
-        </div>
-
-        <div class="experience-grid">
-
-          <article class="experience-card reveal">
-            <div class="experience-index">01 · Preparation</div>
-            <h3>Come ready.</h3>
-            <p>
-              Know your country, understand the issue and arrive prepared to
-              contribute more than a memorised opening speech.
-            </p>
-          </article>
-
-          <article class="experience-card reveal">
-            <div class="experience-index">02 · Procedure</div>
-            <h3>Stay precise.</h3>
-            <p>
-              Strong debate works when everyone understands the rules and chairs
-              can keep the room focused on substance.
-            </p>
-          </article>
-
-          <article class="experience-card reveal">
-            <div class="experience-index">03 · Diplomacy</div>
-            <h3>Build something.</h3>
-            <p>
-              The strongest delegates know when to speak, negotiate and move
-              the room toward consensus.
-            </p>
-          </article>
-
-          <article class="experience-card reveal">
-            <div class="experience-index">04 · Leadership</div>
-            <h3>Leave an impact.</h3>
-            <p>
-              Whether at the placard or on the dais, every role contributes
-              to a stronger conference.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-}
-
-
-/* =========================================================
-   COMMITTEES
-   ========================================================= */
-
-function renderCommittees(){
-
-  renderPage(`
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">Session XIV</span>
-            <h2>The floor.</h2>
-          </div>
-
-          <p>
-            Choose your room carefully. Each committee is designed for a
-            different style of preparation, speaking and negotiation.
-          </p>
-
-        </div>
-
-        <div class="committee-grid">
-
-          ${COMMITTEES.map((committee,index)=>
-            renderCommitteeCard(committee,index)
-          ).join("")}
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-}
-
-
-/* =========================================================
-   SECRETARIAT
-   ========================================================= */
-
-function renderSecretariat(){
-
-  renderPage(`
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head reveal">
-
-          <div>
-            <span class="eyebrow">Session XIV</span>
-            <h2>The Secretariat.</h2>
-          </div>
-
-          <p>
-            From committee directors to the coordination team,
-            these are the people responsible for making the conference work.
-          </p>
-
-        </div>
-
-        <div id="memberGridFull"></div>
-
-      </div>
-
-    </section>
-
-  `);
-
-  loadMembers($("#memberGridFull"));
-}
-
-
-/* =========================================================
-   LOAD MEMBERS
-   ========================================================= */
-
-async function loadMembers(container){
-
-  if(!container) return;
-
-  container.innerHTML = `
-    <div class="members-state">
-      <div>
-        <span class="loader"></span>
-        Loading secretariat...
-      </div>
-    </div>
-  `;
-
-  try{
-
-    const {data,error} = await supabase
-      .from("members")
-      .select(`
-        id,
-        name,
-        role_title,
-        committee,
-        photo_index,
-        photo_url,
-        sort_order
-      `)
-      .order("sort_order",{ascending:true});
-
-    if(error) throw error;
-
-    if(!data?.length){
-
-      container.innerHTML = `
-        <div class="members-state">
-          No secretariat members have been published yet.
-        </div>
-      `;
-
+function syncDOB(){
+  if(dobDay.value && dobMonth.value && dobYear.value){
+    const candidate = `${dobYear.value}-${dobMonth.value}-${dobDay.value}`;
+    const check = new Date(`${candidate}T00:00:00`);
+    if(check.getMonth()+1 === Number(dobMonth.value) && check.getDate() === Number(dobDay.value)){
+      dobHidden.value=candidate;
+      dobHidden.setCustomValidity("");
       return;
     }
-
-    container.innerHTML = `
-
-      <div class="member-grid">
-
-        ${data.map(member=>{
-
-          const imageSource =
-            member.photo_url ||
-            (
-              member.photo_index
-              ? `./member${Number(member.photo_index)}.png`
-              : ""
-            );
-
-          return `
-
-            <article class="member reveal">
-
-              <div class="member-photo">
-
-                <div class="member-fallback">
-                  ${escapeHtml(initials(member.name))}
-                </div>
-
-                ${
-                  imageSource
-                  ? `
-                    <img
-                      src="${escapeHtml(imageSource)}"
-                      alt="${escapeHtml(member.name)}"
-                      loading="lazy"
-                      onerror="this.style.display='none'"
-                    >
-                  `
-                  : ""
-                }
-
-              </div>
-
-              <div class="member-body">
-
-                <div class="member-name">
-                  ${escapeHtml(member.name)}
-                </div>
-
-                <div class="member-role">
-                  ${escapeHtml(member.role_title || "Secretariat")}
-                </div>
-
-                ${
-                  member.committee
-                  ? `
-                    <div class="member-committee">
-                      ${escapeHtml(member.committee)}
-                    </div>
-                  `
-                  : ""
-                }
-
-              </div>
-
-            </article>
-
-          `;
-
-        }).join("")}
-
-      </div>
-
-    `;
-
-    observeReveals();
-
-  }catch(error){
-
-    console.error("Member loading error:",error);
-
-    container.innerHTML = `
-      <div class="members-state">
-        The secretariat roster is temporarily unavailable.
-      </div>
-    `;
-
   }
+  dobHidden.value="";
+  dobHidden.setCustomValidity("Please select a valid date of birth.");
+}
+[dobDay,dobMonth,dobYear].forEach(el=>el.addEventListener("change",syncDOB));
+
+async function uploadFiles(files, folder, applicationId) {
+  const paths = [];
+  for (const file of files) {
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const path = `${applicationId}/${folder}/${crypto.randomUUID()}-${safeName}`;
+    const { error } = await supabaseClient.storage
+      .from("chair-applications")
+      .upload(path, file, { upsert: false });
+
+    if (error) throw new Error(`${file.name}: ${error.message}`);
+    paths.push(path);
+  }
+  return paths;
 }
 
+document.getElementById("chairForm").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const f=e.target;
+  const submitButton=f.querySelector(".submit");
+  const success=document.getElementById("success");
 
-/* =========================================================
-   LOGIN
-   ========================================================= */
+  const uploads=[
+    validateUpload("munCertificates",5),
+    validateUpload("chairCertificates",5),
+    validateUpload("resume",1),
+    validateUpload("lor",1)
+  ];
 
-function renderLogin(){
-
-  renderPage(`
-
-    <section class="auth-screen">
-
-      <div class="container">
-
-        <div class="auth-card">
-
-          <span class="eyebrow" id="authMode">
-            Delegate portal
-          </span>
-
-          <h1 class="auth-title" id="authTitle">
-            Sign in.
-          </h1>
-
-          <p class="auth-sub" id="authSub">
-            Use the email and password associated with your conference account.
-          </p>
-
-          <form class="auth-form" id="authForm">
-
-            <div class="field hidden" id="nameField">
-
-              <label for="fullName">
-                Full name
-              </label>
-
-              <input
-                id="fullName"
-                type="text"
-                autocomplete="name"
-                placeholder="Your full name"
-              >
-
-            </div>
-
-            <div class="field">
-
-              <label for="email">
-                Email address
-              </label>
-
-              <input
-                id="email"
-                type="email"
-                autocomplete="email"
-                placeholder="you@school.edu"
-                required
-              >
-
-            </div>
-
-            <div class="field">
-
-              <label for="password">
-                Password
-              </label>
-
-              <input
-                id="password"
-                type="password"
-                autocomplete="current-password"
-                placeholder="••••••••"
-                minlength="6"
-                required
-              >
-
-            </div>
-
-            <button
-              class="btn btn-primary auth-submit"
-              id="authSubmit"
-              type="submit"
-            >
-              Sign in
-            </button>
-
-          </form>
-
-          <div class="auth-message" id="authMessage"></div>
-
-          <div class="auth-switch">
-
-            <span id="switchLabel">
-              New delegate?
-            </span>
-
-            <button
-              type="button"
-              id="switchButton"
-            >
-              Create an account
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-
-  let mode = "signin";
-
-  const form = $("#authForm");
-  const nameField = $("#nameField");
-  const fullName = $("#fullName");
-  const email = $("#email");
-  const password = $("#password");
-  const submit = $("#authSubmit");
-  const message = $("#authMessage");
-  const authMode = $("#authMode");
-  const authTitle = $("#authTitle");
-  const authSub = $("#authSub");
-  const switchLabel = $("#switchLabel");
-  const switchButton = $("#switchButton");
-
-
-  function updateMode(){
-
-    const signup = mode === "signup";
-
-    nameField.classList.toggle("hidden",!signup);
-    fullName.required = signup;
-
-    authMode.textContent =
-      signup
-      ? "Create account"
-      : "Delegate portal";
-
-    authTitle.textContent =
-      signup
-      ? "Join PACE."
-      : "Sign in.";
-
-    authSub.textContent =
-      signup
-      ? "Create your conference account using the email you will use for PACE."
-      : "Use the email and password associated with your conference account.";
-
-    submit.textContent =
-      signup
-      ? "Create account"
-      : "Sign in";
-
-    switchLabel.textContent =
-      signup
-      ? "Already registered?"
-      : "New delegate?";
-
-    switchButton.textContent =
-      signup
-      ? "Sign in instead"
-      : "Create an account";
-
-    message.className = "auth-message";
+  if(!f.checkValidity() || uploads.some(x=>!x)){
+    f.reportValidity();
+    return;
   }
 
-
-  switchButton.addEventListener("click",()=>{
-
-    mode =
-      mode === "signin"
-      ? "signup"
-      : "signin";
-
-    updateMode();
-
-  });
-
-
-  form.addEventListener("submit",async event=>{
-
-    event.preventDefault();
-
-    message.className = "auth-message";
-
-    submit.disabled = true;
-
-    submit.innerHTML = `
-      <span class="loader"></span>
-      ${mode === "signup" ? "Creating..." : "Signing in..."}
-    `;
-
-
-    try{
-
-      const userEmail = email.value.trim();
-      const userPassword = password.value;
-      const userName = fullName.value.trim();
-
-
-      /*
-       * IMPORTANT:
-       * Authentication is sent directly to Supabase Auth here.
-       *
-       * That guarantees that the publishable key is explicitly
-       * included as the "apikey" header.
-       *
-       * This avoids the exact:
-       * "No API key found in request"
-       * problem you were getting.
-       */
-
-      const endpoint =
-        mode === "signup"
-        ? `${SUPABASE_URL}/auth/v1/signup`
-        : `${SUPABASE_URL}/auth/v1/token?grant_type=password`;
-
-
-      const requestBody =
-        mode === "signup"
-        ? {
-            email:userEmail,
-            password:userPassword,
-            data:{
-              full_name:userName
-            }
-          }
-        : {
-            email:userEmail,
-            password:userPassword
-          };
-
-
-      const response = await fetch(
-        endpoint,
-        {
-          method:"POST",
-
-          headers:{
-            "Content-Type":"application/json",
-            "apikey":SUPABASE_KEY
-          },
-
-          body:JSON.stringify(requestBody)
-        }
-      );
-
-
-      let result = null;
-
-      try{
-        result = await response.json();
-      }catch{
-        result = null;
-      }
-
-
-      if(!response.ok){
-
-        const errorMessage =
-          result?.msg ||
-          result?.message ||
-          result?.error_description ||
-          result?.error ||
-          `Authentication failed (${response.status})`;
-
-        throw new Error(errorMessage);
-      }
-
-
-      /*
-       * Successful login returns access_token + refresh_token.
-       */
-
-      if(
-        mode === "signin" &&
-        result?.access_token &&
-        result?.refresh_token
-      ){
-
-        const {error} = await supabase.auth.setSession({
-          access_token:result.access_token,
-          refresh_token:result.refresh_token
-        });
-
-        if(error) throw error;
-
-        state.session =
-          (await supabase.auth.getSession()).data.session;
-
-        state.profile =
-          state.session
-          ? await loadProfile(state.session.user.id)
-          : null;
-
-        location.hash =
-          state.profile?.role === "admin"
-          ? "#/admin"
-          : "#/dashboard";
-
-        return;
-      }
-
-
-      /*
-       * If email confirmation is enabled,
-       * Supabase may return a user but no session.
-       */
-
-      if(
-        mode === "signup" &&
-        !result?.access_token
-      ){
-
-        setMessage(
-          message,
-          "Account created. Check your email if confirmation is enabled, then sign in.",
-          "ok"
-        );
-
-        return;
-      }
-
-
-      /*
-       * Some Supabase configurations return a session immediately
-       * after signup.
-       */
-
-      if(
-        mode === "signup" &&
-        result?.access_token &&
-        result?.refresh_token
-      ){
-
-        const {error} = await supabase.auth.setSession({
-          access_token:result.access_token,
-          refresh_token:result.refresh_token
-        });
-
-        if(error) throw error;
-
-        state.session =
-          (await supabase.auth.getSession()).data.session;
-
-        state.profile =
-          state.session
-          ? await loadProfile(state.session.user.id)
-          : null;
-
-        location.hash =
-          state.profile?.role === "admin"
-          ? "#/admin"
-          : "#/dashboard";
-
-      }
-
-    }catch(error){
-
-      console.error("Authentication error:",error);
-
-      setMessage(
-        message,
-        error?.message || "Unable to complete authentication.",
-        "error"
-      );
-
-    }finally{
-
-      submit.disabled = false;
-
-      submit.textContent =
-        mode === "signup"
-        ? "Create account"
-        : "Sign in";
-
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   PROFILE
-   ========================================================= */
-
-async function loadProfile(userId){
-
-  const {data,error} = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id",userId)
-    .single();
-
-  if(error){
-
-    console.warn(
-      "Profile could not be loaded:",
-      error
+  submitButton.disabled=true;
+  submitButton.textContent="Submitting…";
+  success.style.display="none";
+
+  try {
+    const applicationId = crypto.randomUUID();
+    const munCertificates = await uploadFiles(
+      document.getElementById("munCertificates").files,
+      "participation-certificates",
+      applicationId
+    );
+    const chairCertificates = await uploadFiles(
+      document.getElementById("chairCertificates").files,
+      "chair-certificates",
+      applicationId
+    );
+    const resume = await uploadFiles(
+      document.getElementById("resume").files,
+      "resume",
+      applicationId
+    );
+    const lor = await uploadFiles(
+      document.getElementById("lor").files,
+      "lor",
+      applicationId
     );
 
-    return null;
-  }
-
-  return data;
-}
-
-
-/* =========================================================
-   DASHBOARD
-   ========================================================= */
-
-function renderDashboard(){
-
-  const profile = state.profile || {};
-
-  renderPage(`
-
-    <section class="dashboard">
-
-      <div class="container">
-
-        <div class="dashboard-head">
-
-          <div>
-
-            <span class="eyebrow">
-              Delegate portal
-            </span>
-
-            <h1>
-              Welcome,
-              ${escapeHtml(
-                profile.full_name ||
-                profile.email ||
-                "delegate"
-              )}.
-            </h1>
-
-            <div class="dashboard-sub">
-              Session XIV · PACE International MUN
-            </div>
-
-          </div>
-
-          <span class="badge">
-            ${escapeHtml(profile.role || "delegate")}
-          </span>
-
-        </div>
-
-
-        <div class="dashboard-grid">
-
-          <section class="dash-panel reveal">
-
-            <h3>
-              Your conference profile
-            </h3>
-
-            <dl class="profile-list">
-
-              <div class="profile-row">
-                <dt>Full name</dt>
-                <dd>
-                  ${escapeHtml(profile.full_name || "—")}
-                </dd>
-              </div>
-
-              <div class="profile-row">
-                <dt>Email</dt>
-                <dd>
-                  ${escapeHtml(profile.email || "—")}
-                </dd>
-              </div>
-
-              <div class="profile-row">
-                <dt>School</dt>
-                <dd>
-                  ${escapeHtml(profile.school || "Not assigned yet")}
-                </dd>
-              </div>
-
-              <div class="profile-row">
-                <dt>Committee</dt>
-                <dd>
-                  ${escapeHtml(profile.committee || "Not assigned yet")}
-                </dd>
-              </div>
-
-              <div class="profile-row">
-                <dt>Country</dt>
-                <dd>
-                  ${escapeHtml(profile.country || "Not assigned yet")}
-                </dd>
-              </div>
-
-              <div class="profile-row">
-                <dt>Role</dt>
-                <dd>
-                  ${escapeHtml(profile.role || "delegate")}
-                </dd>
-              </div>
-
-            </dl>
-
-          </section>
-
-
-          <section class="dash-panel reveal">
-
-            <h3>
-              What's next
-            </h3>
-
-            <div class="next-list">
-
-              <div class="next-item">
-                <div class="next-dot">01</div>
-
-                <div>
-                  <strong>
-                    Committee assignment
-                  </strong>
-
-                  <span>
-                    Published by the Secretariat.
-                  </span>
-                </div>
-              </div>
-
-              <div class="next-item">
-                <div class="next-dot">02</div>
-
-                <div>
-                  <strong>
-                    Country allocation
-                  </strong>
-
-                  <span>
-                    Visible here once confirmed.
-                  </span>
-                </div>
-              </div>
-
-              <div class="next-item">
-                <div class="next-dot">03</div>
-
-                <div>
-                  <strong>
-                    Background guides
-                  </strong>
-
-                  <span>
-                    Released to registered delegations.
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-}
-
-
-/* =========================================================
-   ADMIN
-   ========================================================= */
-
-async function renderAdmin(){
-
-  if(state.profile?.role !== "admin"){
-    location.hash = "#/dashboard";
-    return;
-  }
-
-  renderPage(`
-
-    <section class="admin">
-
-      <div class="container">
-
-        <div class="dashboard-head">
-
-          <div>
-
-            <span class="eyebrow">
-              Secretariat control
-            </span>
-
-            <h1>
-              Administration.
-            </h1>
-
-            <div class="dashboard-sub">
-              Manage the public secretariat roster.
-            </div>
-
-          </div>
-
-          <span class="badge">
-            Admin
-          </span>
-
-        </div>
-
-
-        <div class="admin-grid">
-
-          <section class="admin-panel reveal">
-
-            <h3 id="formTitle">
-              Add a secretariat member
-            </h3>
-
-            <form class="admin-form" id="memberForm">
-
-              <input id="memberId" type="hidden">
-
-              <div class="field">
-
-                <label for="memberName">
-                  Name
-                </label>
-
-                <input
-                  id="memberName"
-                  type="text"
-                  required
-                  placeholder="Full name"
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="memberRole">
-                  Role title
-                </label>
-
-                <input
-                  id="memberRole"
-                  type="text"
-                  required
-                  placeholder="Secretary-General"
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="memberCommittee">
-                  Committee
-                </label>
-
-                <input
-                  id="memberCommittee"
-                  type="text"
-                  placeholder="UNSC"
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="memberPhoto">
-                  Photo index
-                </label>
-
-                <input
-                  id="memberPhoto"
-                  type="number"
-                  min="1"
-                  placeholder="1"
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="memberPhotoUrl">
-                  Photo URL
-                </label>
-
-                <input
-                  id="memberPhotoUrl"
-                  type="url"
-                  placeholder="https://..."
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="memberSort">
-                  Sort order
-                </label>
-
-                <input
-                  id="memberSort"
-                  type="number"
-                  value="0"
-                >
-
-              </div>
-
-
-              <div class="span-2">
-
-                <div class="admin-actions">
-
-                  <button
-                    class="btn btn-primary btn-sm"
-                    type="submit"
-                    id="memberSubmit"
-                  >
-                    Add member
-                  </button>
-
-                  <button
-                    class="btn btn-sm"
-                    type="button"
-                    id="memberCancel"
-                    hidden
-                  >
-                    Cancel
-                  </button>
-
-                </div>
-
-              </div>
-
-            </form>
-
-            <div class="auth-message" id="adminMessage"></div>
-
-          </section>
-
-
-          <section class="admin-panel reveal">
-
-            <h3>
-              Public roster
-            </h3>
-
-            <div class="table-wrap">
-
-              <table>
-
-                <thead>
-
-                  <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>Committee</th>
-                    <th>Order</th>
-                    <th>Actions</th>
-                  </tr>
-
-                </thead>
-
-                <tbody id="rosterBody">
-
-                  <tr>
-                    <td colspan="5">
-                      <span class="loader"></span>
-                      Loading roster...
-                    </td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  `);
-
-
-  const form = $("#memberForm");
-  const formTitle = $("#formTitle");
-  const submit = $("#memberSubmit");
-  const cancel = $("#memberCancel");
-  const message = $("#adminMessage");
-  const rosterBody = $("#rosterBody");
-
-
-  function resetForm(){
-
-    form.reset();
-
-    $("#memberId").value = "";
-    $("#memberSort").value = "0";
-
-    formTitle.textContent =
-      "Add a secretariat member";
-
-    submit.textContent =
-      "Add member";
-
-    cancel.hidden = true;
-  }
-
-
-  async function loadRoster(){
-
-    const {data,error} = await supabase
-      .from("members")
-      .select(`
-        id,
-        name,
-        role_title,
-        committee,
-        photo_index,
-        photo_url,
-        sort_order
-      `)
-      .order("sort_order",{ascending:true});
-
-
-    if(error){
-
-      rosterBody.innerHTML = `
-        <tr>
-          <td colspan="5">
-            Unable to load roster.
-          </td>
-        </tr>
-      `;
-
-      console.error(error);
-
-      return;
-    }
-
-
-    if(!data?.length){
-
-      rosterBody.innerHTML = `
-        <tr>
-          <td colspan="5">
-            No members have been added.
-          </td>
-        </tr>
-      `;
-
-      return;
-    }
-
-
-    rosterBody.innerHTML = data.map(member=>`
-
-      <tr>
-
-        <td>
-          ${escapeHtml(member.name)}
-        </td>
-
-        <td>
-          ${escapeHtml(member.role_title || "")}
-        </td>
-
-        <td>
-          ${escapeHtml(member.committee || "—")}
-        </td>
-
-        <td>
-          ${escapeHtml(member.sort_order ?? 0)}
-        </td>
-
-        <td>
-
-          <div class="row-actions">
-
-            <button
-              type="button"
-              class="btn btn-sm"
-              data-edit="${member.id}"
-            >
-              Edit
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-sm"
-              data-delete="${member.id}"
-            >
-              Delete
-            </button>
-
-          </div>
-
-        </td>
-
-      </tr>
-
-    `).join("");
-
-
-    rosterBody
-      .querySelectorAll("[data-edit]")
-      .forEach(button=>{
-
-        button.addEventListener("click",()=>{
-
-          const member =
-            data.find(
-              item =>
-                String(item.id) ===
-                button.dataset.edit
-            );
-
-          if(!member) return;
-
-
-          $("#memberId").value =
-            member.id;
-
-          $("#memberName").value =
-            member.name || "";
-
-          $("#memberRole").value =
-            member.role_title || "";
-
-          $("#memberCommittee").value =
-            member.committee || "";
-
-          $("#memberPhoto").value =
-            member.photo_index || "";
-
-          $("#memberPhotoUrl").value =
-            member.photo_url || "";
-
-          $("#memberSort").value =
-            member.sort_order ?? 0;
-
-
-          formTitle.textContent =
-            "Edit secretariat member";
-
-          submit.textContent =
-            "Save changes";
-
-          cancel.hidden = false;
-
-
-          form.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-          });
-
-        });
-
+    const firstPreference = f.querySelector('input[name="firstPreference"]:checked')?.value || "";
+    const secondPreference = f.querySelector('input[name="secondPreference"]:checked')?.value || "";
+    const food = f.querySelector('input[name="food"]:checked')?.value || "";
+
+    const { error } = await supabaseClient
+      .from("chair_applications")
+      .insert({
+        id: applicationId,
+        full_name: f.fullName.value.trim(),
+        school: f.school.value.trim(),
+        date_of_birth: f.dateOfBirth.value,
+        mun_count: Number(f.munCount.value),
+        mun_certificates: munCertificates,
+        chair_count: Number(f.chairCount.value),
+        chair_certificates: chairCertificates,
+        resume_path: resume[0],
+        lor_path: lor[0],
+        first_preference: firstPreference,
+        second_preference: secondPreference,
+        why_first: f.whyFirst.value.trim(),
+        gavel: f.gavel.value.trim(),
+        why_pace: f.whyPace.value.trim(),
+        email: f.email.value.trim(),
+        phone: f.phone.value.trim(),
+        coordinator_phone: f.coordinatorPhone.value.trim(),
+        food_preference: food,
+        food_allergies: f.allergies.value.trim(),
+        confirmed: f.confirmation.checked
       });
 
+    if (error) throw error;
 
-    rosterBody
-      .querySelectorAll("[data-delete]")
-      .forEach(button=>{
-
-        button.addEventListener("click",async()=>{
-
-          if(!confirm(
-            "Remove this member from the public roster?"
-          )){
-            return;
-          }
-
-
-          const {error} = await supabase
-            .from("members")
-            .delete()
-            .eq("id",button.dataset.delete);
-
-
-          if(error){
-
-            setMessage(
-              message,
-              error.message,
-              "error"
-            );
-
-            return;
-          }
-
-
-          await loadRoster();
-
-        });
-
-      });
-
+    success.textContent="Application submitted successfully. Your application and uploaded documents have been received.";
+    success.style.display="block";
+    success.scrollIntoView({behavior:"smooth",block:"center"});
+    f.reset();
+  } catch (error) {
+    console.error(error);
+    success.textContent="Submission failed: " + (error.message || "Unknown error") + " Please try again.";
+    success.style.display="block";
+    success.style.borderColor="#7a3434";
+    success.style.background="rgba(180,55,55,.12)";
+  } finally {
+    submitButton.disabled=false;
+    submitButton.textContent="Submit Application →";
   }
+});
 
-
-  cancel.addEventListener(
-    "click",
-    resetForm
-  );
-
-
-  form.addEventListener("submit",async event=>{
-
-    event.preventDefault();
-
-    submit.disabled = true;
-
-
-    const id =
-      $("#memberId").value.trim();
-
-
-    const payload = {
-      name:
-        $("#memberName").value.trim(),
-
-      role_title:
-        $("#memberRole").value.trim(),
-
-      committee:
-        $("#memberCommittee").value.trim() || null,
-
-      photo_index:
-        $("#memberPhoto").value
-        ? Number($("#memberPhoto").value)
-        : null,
-
-      photo_url:
-        $("#memberPhotoUrl").value.trim() || null,
-
-      sort_order:
-        Number($("#memberSort").value || 0)
-    };
-
-
-    try{
-
-      let response;
-
-
-      if(id){
-
-        response = await supabase
-          .from("members")
-          .update(payload)
-          .eq("id",id);
-
-      }else{
-
-        response = await supabase
-          .from("members")
-          .insert(payload);
-
-      }
-
-
-      if(response.error){
-        throw response.error;
-      }
-
-
-      setMessage(
-        message,
-        id
-          ? "Member updated successfully."
-          : "Member added successfully.",
-        "ok"
-      );
-
-
-      resetForm();
-
-      await loadRoster();
-
-    }catch(error){
-
-      console.error(error);
-
-      setMessage(
-        message,
-        error?.message ||
-          "Unable to save member.",
-        "error"
-      );
-
-    }finally{
-
-      submit.disabled = false;
-
-      submit.textContent =
-        $("#memberId").value
-        ? "Save changes"
-        : "Add member";
-
-    }
-
+["munCertificates","chairCertificates","resume","lor"].forEach(id=>{
+  document.getElementById(id).addEventListener("change",()=>{
+    validateUpload(id, id.includes("Certificates") ? 5 : 1);
   });
-
-
-  await loadRoster();
-
-}
-
-
-/* =========================================================
-   AUTH STATE
-   ========================================================= */
-
-supabase.auth.onAuthStateChange(
-  async(_event,session)=>{
-
-    state.session = session;
-
-    state.profile =
-      session
-      ? await loadProfile(session.user.id)
-      : null;
-
-    updateNav();
-
-
-    if(
-      session &&
-      currentPath() === "/login"
-    ){
-
-      location.hash =
-        state.profile?.role === "admin"
-        ? "#/admin"
-        : "#/dashboard";
-
-      return;
-    }
-
-
-    if(
-      !session &&
-      (
-        currentPath() === "/dashboard" ||
-        currentPath() === "/admin"
-      )
-    ){
-
-      location.hash = "#/login";
-
-      return;
-    }
-
-  }
-);
-
-
-/* =========================================================
-   MOBILE NAV
-   ========================================================= */
-
-$("#mobileToggle")?.addEventListener(
-  "click",
-  ()=>{
-
-    const menu =
-      $("#navMenu");
-
-    const open =
-      menu.classList.toggle("open");
-
-    $("#mobileToggle")
-      .setAttribute(
-        "aria-expanded",
-        String(open)
-      );
-
-  }
-);
-
-
-document.querySelectorAll(".nav-link")
-  .forEach(link=>{
-
-    link.addEventListener(
-      "click",
-      closeMobileMenu
-    );
-
-  });
-
-
-/* =========================================================
-   NAV SCROLL
-   ========================================================= */
-
-window.addEventListener(
-  "scroll",
-  ()=>{
-
-    $("#siteNav")
-      ?.classList
-      .toggle(
-        "scrolled",
-        window.scrollY > 18
-      );
-
-  },
-  {passive:true}
-);
-
-
-/* =========================================================
-   ROUTER EVENTS
-   ========================================================= */
-
-window.addEventListener(
-  "hashchange",
-  ()=>{
-    closeMobileMenu();
-    router();
-  }
-);
-
-
-/* =========================================================
-   STARTUP
-   ========================================================= */
-
-$("#year").textContent =
-  new Date().getFullYear();
-
-
-(async()=>{
-
-  try{
-
-    const {
-      data:{
-        session
-      }
-    } =
-      await supabase.auth.getSession();
-
-    state.session = session;
-
-    state.profile =
-      session
-      ? await loadProfile(session.user.id)
-      : null;
-
-
-    await router();
-
-  }catch(error){
-
-    console.error(
-      "Application startup error:",
-      error
-    );
-
-
-    $("#app").innerHTML = `
-
-      <section class="auth-screen">
-
-        <div class="container">
-
-          <div class="auth-card">
-
-            <span class="eyebrow">
-              System
-            </span>
-
-            <h1 class="auth-title">
-              Something went wrong.
-            </h1>
-
-            <p class="auth-sub">
-              The application could not initialize correctly.
-              Open the browser console for more information.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    `;
-
-  }
-
-})();
+});
+
+document.getElementById("chairForm").addEventListener("reset",()=>{
+  setTimeout(()=>document.getElementById("success").style.display="none",0);
+});
 </script>
-
 </body>
 </html>
